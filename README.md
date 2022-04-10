@@ -3,10 +3,10 @@ A copy-paste of some code from [Surma's dither demo](https://surma.dev/lab/dithe
 
 ```js
 import {atkinson, floydSteinberg} from "https://deno.land/x/dither_js@v0.0.3/mod.js"; // see mod.js for the names of the dithering algorithms that are exported
-let ditheredImageData = atkinson(imageData);
+let ditheredImageData = await atkinson(imageData);
 ```
 or:
 ```js
 let dither = await import("https://deno.land/x/dither_js@v0.0.3/mod.js");
-let ditheredImageData = dither.atkinson(imageData);
+let ditheredImageData = await dither.atkinson(imageData);
 ```
