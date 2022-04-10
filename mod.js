@@ -6,7 +6,7 @@ export async function simpleErrorDiffusion(imageData) {
     GrayImageF32N0F8.fromImageData(imageData).copy(),
     new GrayImageF32N0F8(new Float32Array([0, 1, 1, 0]), 2, 2),
     v => (v > 0.5 ? 1.0 : 0.0)
-  );
+  ).toImageData();
 }
 
 export async function floydSteinberg(imageData) {
@@ -14,7 +14,7 @@ export async function floydSteinberg(imageData) {
     GrayImageF32N0F8.fromImageData(imageData).copy(),
     new GrayImageF32N0F8(new Float32Array([0, 0, 7, 1, 5, 3]), 3, 2),
     v => (v > 0.5 ? 1.0 : 0.0)
-  );
+  ).toImageData();
 }
 
 export async function jjn(imageData) { // Jarvis-Judice-Ninke Diffusion
@@ -26,7 +26,7 @@ export async function jjn(imageData) { // Jarvis-Judice-Ninke Diffusion
       3
     ),
     v => (v > 0.5 ? 1.0 : 0.0)
-  );
+  ).toImageData();
 }
 
 export async function atkinson(imageData) {
@@ -39,7 +39,7 @@ export async function atkinson(imageData) {
     ),
     v => (v > 0.5 ? 1.0 : 0.0),
     {normalize: false}
-  );
+  ).toImageData();
 }
 
 export async function riemersma(imageData) {
@@ -48,7 +48,7 @@ export async function riemersma(imageData) {
     hilbertCurveGenerator,
     weightGenerator(32, 1 / 8),
     v => (v > 0.5 ? 1.0 : 0.0)
-  );
+  ).toImageData();
 }
 
 function curveErrorDiffusion(img, curve, weights, quantF) {
