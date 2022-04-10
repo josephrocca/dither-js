@@ -382,7 +382,7 @@ export class GrayImageF32N0F8 extends Image {
   }
 
   static fromImageData(sourceImage) {
-    console.log("OMG");
+    // console.log("OMG");
     sourceImage = RGBAImageU8.fromImageData(sourceImage);
 
     const img = new GrayImageF32N0F8(
